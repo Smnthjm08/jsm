@@ -1,12 +1,14 @@
-import { Button } from "@nextui-org/button";
+"use client";
 
-import SignIn from "@/components/sign-in";
+import { Button } from "@nextui-org/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <Button>Hello</Button>
-      <SignIn />
-    </section>
-  );
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/sign-up");
+  };
+
+  return <Button onClick={handleClick}>Hello</Button>;
 }
